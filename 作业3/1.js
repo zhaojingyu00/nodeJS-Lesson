@@ -16,6 +16,10 @@ http.createServer(function(req,res){
         else if (pathName.indexOf("/detail")>=0){
             showDetail(res);            
         }
+        else if(pathName =='/getDetail'){
+            showcapital(res);
+            
+        }
         else if(pathName == "/add"){
             addmyli(req,res);
         }
@@ -121,7 +125,7 @@ var endli=[];
 var myli=[];
 function addmyli(req,res){
     var addStr = '';
-    req.setEncoding('binary');
+    req.setEncoding('utf-8');
     req.on("data",function(chunk){
         addStr += chunk;
     })
@@ -141,6 +145,12 @@ function addmyli(req,res){
     })
     console.log("执行add");
 };
+function showcapital(res){
+    console.log("shwo");
+    var listStr = JSON.stringify(chapterList);
+    res.writeHead(200,{"Content-Type":"text/html;text/plain;charset:utf-8"});
+    res.end(listStr);
+}
 function addmylist(res){
     var listStr = JSON.stringify(chapterList);
     res.writeHead(200,{"Content-Type":"text/html;text/plain;charset:utf-8"});
