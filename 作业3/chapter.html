@@ -28,8 +28,7 @@
     <div class="keybq">
     	<p><span>关键字词</span>：生活,无奈,努力,生存</p>
     </div> -->
-    
-    <div class="ad"> </div>
+  <div class="ad"> </div>
 
 </article>
 <footer>
@@ -41,24 +40,20 @@
 <script>
     $(document).ready(function(){
         $.get("http://localhost:8083/getDetail" ,function(data){
-            $("#result").html(" ");
-            console.log(data);
+          $("#result").html(" ");
             var dataList=JSON.parse(data);
-            var Id = window.location.search.slice(3)-1;
-            console.log(i);
+            var id = window.location.search.slice(3);
                 var liNode =  
-                  "<div class='index_about'><h2 class='c_titile' id='title'>"+dataList[i].chapterName+
-                    "</h2><p class='box_c'><span class='d_time'>发布时间：<span id='publish'>"+dataList[i].publishTimer+
-                      "</span></span><span>编辑：<span id='author'>"+dataList[i].author+
-                        "</span></span><span>互动QQ群：<a>1234567</a><span>浏览次数：<span id='views'>"+dataList[i].views+
+                  "<div class='index_about'><h2 class='c_titile' id='title'>"+dataList[id].chapterName+
+                    "</h2><p class='box_c'><span class='d_time'>发布时间：<span id='publish'>"+dataList[id].publishTimer+
+                      "</span></span><span>编辑：<span id='author'>"+dataList[id].author+
+                        "</span></span><span>互动QQ群：<a>1234567</a><span>浏览次数：<span id='views'>"+dataList[id].views+
                           "</span></span></span></p><ul class='infos' id='content'>"+
-                    "<p>&nbsp;"+dataList[i].chapterName+"</p>"+
-                    "<p>"+dataList[i].chapterDes+"</p><p>"+dataList[i].chapterContent+"</p></ul><ul class='pagelist'></ul>"+
+                    "<p>&nbsp;"+dataList[id].chapterName+"</p>"+
+                    "<p>"+dataList[id].chapterDes+"</p><p>"+dataList[id].chapterContent+"</p></ul><ul class='pagelist'></ul>"+
                     "<div class='keybq'><p><span>关键字词</span>：生活,无奈,努力,生存</p></div>"+
                     "<div class='ad'> </div>"
                   $("#result").append(liNode);
-            console.log(dataList);
-           
         })
     })
 </script>

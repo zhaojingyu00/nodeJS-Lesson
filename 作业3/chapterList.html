@@ -39,12 +39,12 @@ $(document).ready(function(){
                     "' border='0' width='120' height='120' alt='"+dataList[i].chapterName+
                     "'></figure><ul class='nlist'><p>"+dataList[i].chapterDes+
                     "</p><a title='"+dataList[i].chapterName+
-                    "'href='/detail?Id="+(i+1)+
+                    "'href='/detail?id="+(i+1)+
                     "'target='_blank' class='readmore' id='readmore'>阅读全文>></a></ul><p class='dateview'><span>发布时间："+
                     dataList[i].publishTimer+"</span><span>作者："+
                     dataList[i].author+"</span><span>分类：[<a href='/''>悠客</a>]</span><span class='nl'>浏览"+
-                    dataList[i].views+
-                    "</span><span class='n2'>评论（<a href="/">0</a>）</span><div class='line'></div></p></div>"
+                    dataList[i].views+"</span>"+
+                    "<span>评论（<a href='/'>0</a>）</span>"+"<div class='line'></div></p></div>";
                 $("#left").append(liNode);
             }
     })
